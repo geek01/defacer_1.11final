@@ -118,7 +118,7 @@ class DefacerPageHandler extends XoopsPersistableObjectHandler
             }
             $sql .= ' ' . $where;
         }
-        if (!$result = &$this->db->query($sql)) {
+        if (!$result = $this->db->query($sql)) {
             return 0;
         }
         list($count) = $this->db->fetchRow($result);
@@ -147,7 +147,7 @@ class DefacerPageHandler extends XoopsPersistableObjectHandler
         if (!is_array($value)) {
             $value = array($value);
         }
-        $module_handler = &xoops_gethandler('module');
+        $module_handler = xoops_getHandler('module');
         $criteria = new CriteriaCompo(new Criteria('hasmain', 1));
         $criteria->add(new Criteria('isactive', 1));
         $module_list = &$module_handler->getObjects($criteria);

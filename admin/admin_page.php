@@ -251,7 +251,7 @@ function defacer_form($itemid = 0)
     $mid = new XoopsFormSelect(_AM_DEFACER_PAGE_MODULE, 'page_moduleid', $obj->getVar('page_moduleid', 'e'));
     $mid->customValidationCode[] = 'var value = document.getElementById(\'page_moduleid\').value; if (value == 0){alert("' . _AM_DEFACER_SELECTMODULE_ERR . '"); return false;}';
 
-    $module_handler =& xoops_gethandler('module');
+    $module_handler = xoops_getHandler('module');
     $criteria = new CriteriaCompo(new Criteria('hasmain', 1));
     $criteria->add(new Criteria('isactive', 1));
     //$criteria->setSort('name');

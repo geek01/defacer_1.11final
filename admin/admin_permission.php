@@ -65,7 +65,7 @@ function defacer_index($start = 0, $limit = 0)
 
     $defacer =& DefacerDefacer::getInstance();
 
-    $grouplist_handler =& xoops_gethandler('group');
+    $grouplist_handler = xoops_getHandler('group');
     $grouplist = $grouplist_handler->getObjects(null, true);
     foreach (array_keys($grouplist) as $i) {
         $groups[$i] = $grouplist[$i]->getVar('name');

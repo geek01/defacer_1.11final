@@ -100,7 +100,7 @@ class DefacerAbout
         xoops_cp_header();
         defacer_adminMenu(4);
 
-        $module_handler =& xoops_gethandler('module');
+        $module_handler = xoops_getHandler('module');
         $versioninfo =& $module_handler->get($xoopsModule->getVar('mid'));
 
         include_once XOOPS_ROOT_PATH . '/class/template.php';
