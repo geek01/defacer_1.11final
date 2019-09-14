@@ -29,7 +29,7 @@ class DefacerDefacer
     public $debug;
     public $debugArray = array();
 
-    public function DefacerDefacer($debug)
+    public function __construct($debug)
     {
         $this->debug = $debug;
         $this->dirname = basename(dirname(dirname(__FILE__)));
