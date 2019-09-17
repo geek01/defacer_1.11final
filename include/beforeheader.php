@@ -47,7 +47,7 @@ if (is_object($defacer->getModule()) && $defacer->getModule()->getVar('isactive'
             $pageid = defacer_getPageInfo(array_keys($objs));
             if (isset($objs[$pageid]) && is_object($objs[$pageid])) {
                 $theme = $objs[$pageid]->getVar('theme_name');
-                if (empty($theme) || !file_exists(XOOPS_ROOT_PATH . "/themes/{$theme}/theme.html")) {
+                if (empty($theme) || (!file_exists(XOOPS_ROOT_PATH . "/themes/{$theme}/theme.html") and !file_exists(XOOPS_ROOT_PATH . "/themes/{$theme}/theme.tpl"))) {
                     $theme = $GLOBALS['xoopsConfig']['theme_set'];
                 }
                 $GLOBALS['xoopsConfig']['theme_set'] = $theme;
